@@ -3,19 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Arsh Patel | MHI — Technical Vault</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Arsh Patel | MHI – Colorful Notes Vault</title>
+  <!-- Google Fonts: Poppins (from e-commerce) + Plus Jakarta Sans backup -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; /* prevent text selection */ }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    /* ----- Premium Colorful Palette (Flipkart/Meesho inspired) ----- */
+    :root {
+      --primary: #9F2089;      /* Magenta – brand primary */
+      --secondary: #FB641B;    /* Flipkart Orange – for badges & accents */
+      --accent: #03A685;       /* Teal – for success/extra pop */
+      --bg-light: #F1F3F6;     /* Flipkart light gray background */
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --glass-border: rgba(0, 0, 0, 0.06);
+      --text-dark: #212121;     /* Flipkart dark text */
+      --text-muted: #5A5A7A;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 12px 24px rgba(159, 32, 137, 0.2), 0 4px 8px rgba(0,0,0,0.1);
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0a0a1a, #010105);
-      color: #f0f2ff;
+      font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.4;
       min-height: 100vh;
     }
-    /* animated bg overlay */
+
+    /* Subtle gradient overlay for extra depth */
     body::before {
       content: "";
       position: fixed;
@@ -23,11 +46,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at 80% 30%, rgba(139, 92, 246, 0.25), transparent 70%),
-                  radial-gradient(circle at 20% 70%, rgba(236, 72, 153, 0.2), transparent 60%);
+      background: radial-gradient(ellipse at 80% 30%, rgba(159, 32, 137, 0.05), transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
+
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -35,54 +58,62 @@
       position: relative;
       z-index: 2;
     }
-    /* Hero */
+
+    /* ----- Hero Section (Colorful Glow) ----- */
     .glow-name {
       font-size: clamp(3rem, 12vw, 5.5rem);
       font-weight: 800;
-      background: linear-gradient(135deg, #FFFFFF, #E2C6FF, #A78BFA, #F472B6);
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
       background-size: 300% 300%;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+      text-shadow: 0 2px 12px rgba(159, 32, 137, 0.25);
       animation: softPulse 3.2s ease infinite alternate;
       text-align: center;
       margin-bottom: 0.8rem;
     }
+
     @keyframes softPulse {
-      0% { text-shadow: 0 0 8px rgba(167, 139, 250, 0.4); }
-      100% { text-shadow: 0 0 30px rgba(167, 139, 250, 0.9), 0 0 45px rgba(244, 114, 182, 0.6); }
+      0% { text-shadow: 0 2px 8px rgba(159, 32, 137, 0.2); }
+      100% { text-shadow: 0 4px 25px rgba(159, 32, 137, 0.45), 0 0 8px rgba(251, 100, 27, 0.3); }
     }
+
     .hero-title {
       text-align: center;
       font-size: clamp(1rem, 4vw, 1.4rem);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
       display: inline-block;
       width: auto;
       margin: 0 auto 2rem;
       padding: 0.6rem 1.8rem;
       border-radius: 80px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-weight: 500;
     }
-    /* About Founder – professional & minimal */
+
+    /* ----- About Founder (Card Style) ----- */
     .about-founder {
-      background: rgba(15, 12, 35, 0.55);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(139, 92, 246, 0.3);
-      border-radius: 2rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
       padding: 2rem;
       margin: 1rem 0 2.5rem;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      box-shadow: var(--shadow-sm);
     }
     .about-founder:hover {
-      border-color: #A78BFA;
-      box-shadow: 0 0 18px rgba(167,139,250,0.15);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
     .about-header {
       font-size: 1.6rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #E9E3FF, #C084FC);
+      background: linear-gradient(135deg, var(--text-dark), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -93,7 +124,7 @@
     }
     .about-text {
       font-size: 1rem;
-      color: #ddd6fe;
+      color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 1.2rem;
     }
@@ -104,17 +135,24 @@
       margin-top: 0.5rem;
     }
     .arsenal-item {
-      background: rgba(139, 92, 246, 0.15);
+      background: rgba(159, 32, 137, 0.1);
       padding: 8px 16px;
       border-radius: 40px;
       font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.1);
+      font-weight: 600;
+      border: 1px solid var(--glass-border);
+      color: var(--primary);
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: 0.2s;
     }
-    /* section headings */
+    .arsenal-item:hover {
+      background: rgba(159, 32, 137, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ----- Section Headings (Colorful) ----- */
     .section-head {
       display: flex;
       align-items: center;
@@ -122,40 +160,41 @@
       font-size: 1.6rem;
       font-weight: 700;
       margin: 2rem 0 1.5rem;
-      background: linear-gradient(120deg, #E9E3FF, #C4B5FD);
+      background: linear-gradient(120deg, var(--text-dark), var(--primary), var(--secondary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    /* core cards grid */
+
+    /* ----- Core Cards (4 Permanent) – Enhanced from e-commerce ----- */
     .core-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
+      gap: 1.5rem;
       margin-bottom: 1rem;
     }
-    /* shared glass card style */
     .glass-card {
-      background: rgba(18, 14, 40, 0.7);
-      backdrop-filter: blur(16px);
-      border-radius: 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
     .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(167, 139, 250, 0.6);
-      box-shadow: 0 20px 32px -12px rgba(0,0,0,0.5);
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
     }
     .card-icon {
       height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(236, 72, 153, 0.25));
+      background: linear-gradient(135deg, rgba(159, 32, 137, 0.08), rgba(251, 100, 27, 0.04));
       font-size: 3.5rem;
-      color: #f0eaff;
+      color: var(--primary);
     }
     .card-content {
       padding: 1.2rem 1.2rem 1.4rem;
@@ -163,19 +202,23 @@
     .card-title {
       font-size: 1.3rem;
       font-weight: 700;
-      background: linear-gradient(125deg, #FFF, #D9C8FF);
+      background: linear-gradient(125deg, var(--text-dark), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .card-badge {
-      font-size: 0.75rem;
-      color: #b7a9e6;
-      border-top: 1px dashed rgba(255,255,255,0.15);
+      font-size: 0.7rem;
+      color: var(--accent);
+      border-top: 1px dashed var(--glass-border);
       padding-top: 0.6rem;
       margin-top: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    /* Daily Q&A grid */
+
+    /* ----- Daily Q&A Grid (15 Cards) – Enhanced hover from e-commerce ----- */
     .qa-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -183,87 +226,134 @@
       margin-bottom: 2rem;
     }
     .qa-card {
-      background: rgba(18, 14, 40, 0.7);
-      backdrop-filter: blur(16px);
-      border-radius: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.12);
-      transition: 0.25s;
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
+      transition: 0.25s ease;
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      animation: fadeInUp 0.4s ease-out;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .qa-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(139,92,246,0.5);
+      transform: translateY(-8px);
+      border-color: var(--secondary);
+      box-shadow: 0 12px 28px rgba(251, 100, 27, 0.2);
+    }
+    /* Question number badge (Flipkart style orange) */
+    .qa-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--secondary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     .qa-img {
-      height: 150px;
-      background: #0a0820;
+      background: #f0f0f5;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      position: relative;
+      min-height: 160px;
     }
     .qa-img img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none; /* prevent drag */
+      height: auto;
+      object-fit: contain;
+      max-height: 200px;
+      pointer-events: none;
+      image-rendering: crisp-edges;
+      transition: transform 0.3s ease;
+    }
+    .qa-card:hover .qa-img img {
+      transform: scale(1.02);
     }
     .img-placeholder {
       width: 100%;
-      height: 100%;
+      min-height: 160px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #211c44, #110e2a);
-      color: #bbaaff;
+      background: rgba(0,0,0,0.03);
+      color: var(--text-muted);
       gap: 8px;
+      font-size: 0.8rem;
     }
     .qa-body {
       padding: 1rem 1.2rem 1.2rem;
     }
     .qa-question {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1rem;
-      color: #f0e6ff;
+      color: var(--text-dark);
       margin-bottom: 0.5rem;
       display: flex;
       gap: 8px;
     }
     .qa-answer {
       font-size: 0.85rem;
-      color: #c4b5fd;
-      line-height: 1.4;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
-    /* Day selector */
+
+    /* ----- Day Selector (Colorful) ----- */
     .day-control {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.8rem;
-      background: rgba(0,0,0,0.35);
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
       padding: 0.8rem 1.2rem;
       border-radius: 60px;
-      backdrop-filter: blur(4px);
+      border: 1px solid var(--glass-border);
+    }
+    .day-control label {
+      font-weight: 600;
+      color: var(--text-muted);
     }
     #daySelect {
-      background: #1e1a3a;
-      border: 1px solid #a78bfa;
-      color: white;
+      background: white;
+      border: 1px solid var(--primary);
+      color: var(--text-dark);
       padding: 0.5rem 1.2rem;
       border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
+      font-family: inherit;
     }
-    /* skills & contact */
+
+    /* ----- Skills Section (Badges) ----- */
     .skills-elite {
       margin: 2rem 0;
       padding: 1.5rem;
-      background: rgba(10, 7, 28, 0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 1.8rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
     }
     .skills-badge-list {
       display: flex;
@@ -273,17 +363,30 @@
       margin-top: 0.8rem;
     }
     .skill-badge {
-      background: linear-gradient(105deg, rgba(139, 92, 246, 0.2), rgba(244, 114, 182, 0.15));
+      background: linear-gradient(105deg, rgba(159, 32, 137, 0.1), rgba(251, 100, 27, 0.05));
       padding: 0.5rem 1.2rem;
       border-radius: 40px;
       font-size: 0.85rem;
       font-weight: 600;
+      color: var(--primary);
+      border: 1px solid var(--glass-border);
+      transition: 0.2s;
+    }
+    .skill-badge:hover {
+      transform: translateY(-2px);
+      background: rgba(159, 32, 137, 0.2);
+    }
+
+    /* ----- Contact Founder Button (with active scale from e-commerce) ----- */
+    .contact-founder-area {
+      text-align: center;
+      margin: 2rem 0;
     }
     .btn-founder {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(95deg, #7C3AED, #DB2777, #F43F5E);
+      background: linear-gradient(95deg, var(--primary), var(--secondary), var(--accent));
       background-size: 180% auto;
       padding: 0.9rem 2rem;
       border-radius: 60px;
@@ -291,31 +394,41 @@
       font-size: 1rem;
       color: white;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(159, 32, 137, 0.4);
+      border: none;
+      cursor: pointer;
     }
     .btn-founder:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(192, 132, 252, 0.7);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(159, 32, 137, 0.6);
+      background-position: right center;
     }
-    .contact-founder-area {
-      text-align: center;
-      margin: 2rem 0;
+    .btn-founder:active {
+      transform: scale(0.98);
     }
+
+    /* ----- Footer ----- */
     .footer-signature {
       text-align: center;
       margin-top: 2rem;
       padding-top: 1.2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--glass-border);
       font-size: 0.8rem;
-      color: #b6a9e0;
+      color: var(--text-muted);
     }
-    /* responsive */
-    @media (max-width: 640px) {
+
+    /* ----- Responsive (e-commerce style grid adjustment) ----- */
+    @media (max-width: 768px) {
       .container { padding: 1rem; }
-      .core-grid, .qa-grid { grid-template-columns: 1fr; }
+      .core-grid, .qa-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .about-header { font-size: 1.3rem; }
     }
-    /* prevent right-click on images */
+    @media (max-width: 480px) {
+      .core-grid, .qa-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ----- Right-click disable on images ----- */
     img {
       pointer-events: none;
       user-drag: none;
@@ -325,14 +438,15 @@
 </head>
 <body>
 <div class="container">
+  <!-- Hero Section -->
   <div class="glow-name">ARSH PATEL</div>
   <div class="hero-title">Founder & Leader of Mastermind Hackers India (MHI)</div>
 
-  <!-- About Founder - clean & professional (no poetry) -->
+  <!-- About Founder (Professional, No Poetry) -->
   <div class="about-founder">
     <div class="about-header"><i class="fas fa-crown"></i> About the Founder</div>
     <div class="about-text">
-      <strong>Arsh Patel</strong> – Technical Architect & founder of <strong>Mastermind Hackers India (MHI)</strong>.  
+      <strong>Arsh Patel</strong> – Technical Architect & founder of <strong>Mastermind Hackers India (MHI)</strong>.<br>
       At 17, he architects high-performance Python bots, secure web ecosystems, and leads a team dedicated to next‑gen tech innovation.
     </div>
     <div class="arsenal-grid">
@@ -343,26 +457,26 @@
     </div>
   </div>
 
-  <!-- 4 Core Cards -->
-  <div class="section-head"><i class="fas fa-microchip"></i><span>Technical Vault – Core Arsenal</span></div>
+  <!-- 4 Core Cards (Permanent) -->
+  <div class="section-head"><i class="fas fa-microchip"></i> Technical Vault – Core Arsenal</div>
   <div class="core-grid">
-    <div class="glass-card"><div class="card-icon"><i class="fab fa-python"></i></div><div class="card-content"><div class="card-title">Python Bot Engineering</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><div class="card-content"><div class="card-title">Professional Web Design</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-user-shield"></i></div><div class="card-content"><div class="card-title">Cybersecurity & Ethical Hacking</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-microchip"></i></div><div class="card-content"><div class="card-title">Advanced Coding</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fab fa-python"></i></div><div class="card-content"><div class="card-title">Python Bot Engineering</div><div class="card-badge">🏆 1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><div class="card-content"><div class="card-title">Professional Web Design</div><div class="card-badge">🏆 1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-user-shield"></i></div><div class="card-content"><div class="card-title">Cybersecurity & Ethical Hacking</div><div class="card-badge">🏆 1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-microchip"></i></div><div class="card-content"><div class="card-title">Advanced Coding</div><div class="card-badge">🏆 1st Advanced Coding Architecture</div></div></div>
   </div>
 
-  <!-- Daily Q&A Section (Dynamic Days) -->
-  <div class="section-head"><i class="fas fa-calendar-day"></i><span>Daily 15 Q&A – AI Visual Notes</span></div>
+  <!-- Daily 15 Q&A Section (Dynamic) -->
+  <div class="section-head"><i class="fas fa-calendar-day"></i> Daily 15 Q&A – AI Visual Notes</div>
   <div class="day-control">
     <label><i class="fas fa-calendar-alt"></i> Select Day:</label>
     <select id="daySelect"></select>
   </div>
-  <div id="dailyQaGrid" class="qa-grid">Loading...</div>
+  <div id="dailyQaGrid" class="qa-grid">Loading notes...</div>
 
-  <!-- Skills & Contact -->
+  <!-- Core Expertise & Armory -->
   <div class="skills-elite">
-    <div style="display:flex; gap:12px; align-items:center;"><i class="fas fa-crown"></i><span style="font-weight:700;">Core Expertise & Armory</span></div>
+    <div style="display: flex; gap: 12px; align-items: center; font-weight: 700;"><i class="fas fa-crown"></i> Core Expertise & Armory</div>
     <ul class="skills-badge-list">
       <li class="skill-badge"><i class="fab fa-python"></i> Python Bot Development</li>
       <li class="skill-badge"><i class="fas fa-shield-virus"></i> Cybersecurity & Ethical Hacking</li>
@@ -370,9 +484,13 @@
       <li class="skill-badge"><i class="fas fa-terminal"></i> Advanced Coding</li>
     </ul>
   </div>
+
+  <!-- Contact Founder Button -->
   <div class="contact-founder-area">
     <a href="https://wa.me/919453945377" target="_blank" class="btn-founder"><i class="fab fa-whatsapp"></i> Contact Founder <i class="fas fa-arrow-right"></i></a>
   </div>
+
+  <!-- Footer -->
   <div class="footer-signature">
     <div>Admin: <strong>Arsh Patel</strong> | © 2026</div>
     <div><i class="fas fa-phone-alt"></i> +91 94539 45377</div>
@@ -381,9 +499,10 @@
 
 <script>
   // ==========================================================
-  // 🔥 EDIT YOUR QUESTIONS & ANSWERS HERE 🔥
+  // 🔥 EDIT YOUR DAILY QUESTIONS & ANSWERS HERE 🔥
   // Format: dayNumber: [ { q: "Question", a: "Answer" }, ... ]
-  // Each day must have 15 items (1 to 15). Add as many days as you want.
+  // Each day MUST have 15 items (1 to 15).
+  // Add more days as needed (e.g., 2: [...], 3: [...]).
   // ==========================================================
   const allQA = {
     1: [
@@ -403,15 +522,13 @@
       { q: "Computer mein Taskbar Patti ka Prayog?", a: "Start button, pinned apps, Wi-Fi, volume, clock (time)." },
       { q: "Run Command se kisi program ko open karna?", a: "Win+R, type program name (e.g., notepad), Enter." }
     ]
-    // 🔽 Add Day 2 like below (exactly 15 items):
+    // 🔽 Add Day 2 like this (exactly 15 items):
     // 2: [
     //   { q: "Question 1", a: "Answer 1" },
     //   ... up to 15
     // ],
-    // 3: [ ... ],
   };
 
-  // --- helper to ensure each day has exactly 15 items (fill missing with placeholders)
   const DEFAULT_QA = [];
   for (let i = 1; i <= 15; i++) DEFAULT_QA.push({ q: `Question ${i}`, a: `Answer ${i}` });
 
@@ -420,18 +537,16 @@
     if (!userQA) return DEFAULT_QA.slice();
     const filled = [];
     for (let i = 0; i < 15; i++) {
-      if (i < userQA.length) filled.push(userQA[i]);
-      else filled.push(DEFAULT_QA[i]);
+      filled.push(i < userQA.length ? userQA[i] : DEFAULT_QA[i]);
     }
     return filled;
   }
 
-  // --- populate day selector dynamically from allQA keys + allow up to day 30? We'll just use existing keys.
+  // Populate day selector dynamically from allQA keys
   function populateDaySelector() {
     const select = document.getElementById('daySelect');
     select.innerHTML = '';
     const days = Object.keys(allQA).map(Number).sort((a,b) => a-b);
-    if (days.length === 0) days.push(1);
     days.forEach(day => {
       const option = document.createElement('option');
       option.value = day;
@@ -440,7 +555,7 @@
     });
   }
 
-  // --- render cards for selected day (no copy button)
+  // Render cards for selected day (no copy button)
   function renderDailyCards(day) {
     const grid = document.getElementById('dailyQaGrid');
     grid.innerHTML = '';
@@ -452,19 +567,25 @@
       const card = document.createElement('div');
       card.className = 'qa-card';
 
+      // Question number badge
+      const badge = document.createElement('div');
+      badge.className = 'qa-badge';
+      badge.textContent = qNum;
+      card.appendChild(badge);
+
       const imgDiv = document.createElement('div');
       imgDiv.className = 'qa-img';
       const img = new Image();
       img.src = imageUrl;
       img.alt = `Q${qNum}`;
       img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'cover';
+      img.style.height = 'auto';
+      img.style.maxHeight = '200px';
       img.onerror = () => {
         if (imgDiv.querySelector('.img-placeholder')) return;
         const ph = document.createElement('div');
         ph.className = 'img-placeholder';
-        ph.innerHTML = `<i class="fas fa-image"></i><span>AI image soon</span><small>${imageUrl}</small>`;
+        ph.innerHTML = `<i class="fas fa-image" style="font-size: 2rem;"></i><span>AI image coming soon</span><small>${imageUrl}</small>`;
         imgDiv.innerHTML = '';
         imgDiv.appendChild(ph);
       };
@@ -473,8 +594,8 @@
       const bodyDiv = document.createElement('div');
       bodyDiv.className = 'qa-body';
       bodyDiv.innerHTML = `
-        <div class="qa-question"><i class="fas fa-question-circle"></i> ${escapeHtml(item.q)}</div>
-        <div class="qa-answer"><i class="fas fa-lightbulb"></i> ${escapeHtml(item.a)}</div>
+        <div class="qa-question"><i class="fas fa-question-circle" style="color: var(--primary);"></i> ${escapeHtml(item.q)}</div>
+        <div class="qa-answer"><i class="fas fa-lightbulb" style="color: var(--secondary);"></i> ${escapeHtml(item.a)}</div>
       `;
       card.appendChild(imgDiv);
       card.appendChild(bodyDiv);
@@ -491,7 +612,7 @@
     });
   }
 
-  // disable right-click on all images (additional protection)
+  // Disable right-click on all images
   document.addEventListener('contextmenu', function(e) {
     if (e.target.tagName === 'IMG') {
       e.preventDefault();
@@ -499,7 +620,7 @@
     }
   });
 
-  // init
+  // Initialize
   populateDaySelector();
   const daySelect = document.getElementById('daySelect');
   let currentDay = parseInt(daySelect.value);
