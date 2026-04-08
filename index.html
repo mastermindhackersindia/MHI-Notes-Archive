@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Arsh Patel | MHI — Founder's Vault</title>
+  <title>Arsh Patel | MHI — Technical Vault</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; /* prevent text selection */ }
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0C0A1F, #02010A);
-      color: #F0F2FF;
+      background: radial-gradient(circle at 10% 20%, #0a0a1a, #010105);
+      color: #f0f2ff;
       line-height: 1.4;
+      min-height: 100vh;
     }
+    /* animated bg overlay */
     body::before {
       content: "";
       position: fixed;
@@ -21,8 +23,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at 80% 30%, rgba(139, 92, 246, 0.2), transparent 70%),
-                  radial-gradient(circle at 20% 70%, rgba(236, 72, 153, 0.15), transparent 60%);
+      background: radial-gradient(ellipse at 80% 30%, rgba(139, 92, 246, 0.25), transparent 70%),
+                  radial-gradient(circle at 20% 70%, rgba(236, 72, 153, 0.2), transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -33,6 +35,7 @@
       position: relative;
       z-index: 2;
     }
+    /* Hero */
     .glow-name {
       font-size: clamp(3rem, 12vw, 5.5rem);
       font-weight: 800;
@@ -41,97 +44,82 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 12px rgba(167, 139, 250, 0.4);
+      text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
       animation: softPulse 3.2s ease infinite alternate;
       text-align: center;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.8rem;
     }
     @keyframes softPulse {
-      0% { text-shadow: 0 0 6px rgba(167, 139, 250, 0.3); }
-      100% { text-shadow: 0 0 20px rgba(167, 139, 250, 0.7), 0 0 38px rgba(244, 114, 182, 0.5); }
+      0% { text-shadow: 0 0 8px rgba(167, 139, 250, 0.4); }
+      100% { text-shadow: 0 0 30px rgba(167, 139, 250, 0.9), 0 0 45px rgba(244, 114, 182, 0.6); }
     }
     .hero-title {
       text-align: center;
       font-size: clamp(1rem, 4vw, 1.4rem);
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
       display: inline-block;
       width: auto;
       margin: 0 auto 2rem;
       padding: 0.6rem 1.8rem;
       border-radius: 80px;
+      border: 1px solid rgba(255,255,255,0.2);
     }
-    /* About Founder Section - Premium */
+    /* About Founder – professional & minimal */
     .about-founder {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(167, 139, 250, 0.3);
+      background: rgba(15, 12, 35, 0.55);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(139, 92, 246, 0.3);
       border-radius: 2rem;
-      padding: 2.2rem 2rem;
+      padding: 2rem;
       margin: 1rem 0 2.5rem;
-      backdrop-filter: blur(12px);
       transition: 0.3s;
     }
     .about-founder:hover {
       border-color: #A78BFA;
-      box-shadow: 0 0 20px rgba(167,139,250,0.2);
+      box-shadow: 0 0 18px rgba(167,139,250,0.15);
     }
     .about-header {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       background: linear-gradient(135deg, #E9E3FF, #C084FC);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .about-sub {
-      color: #C4B5FD;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.5px;
-      border-left: 3px solid #A78BFA;
-      padding-left: 12px;
-    }
-    .about-text {
-      font-size: 1.02rem;
-      color: #E2C6FF;
-      line-height: 1.6;
-      margin-bottom: 1.4rem;
-    }
-    .arsenal-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
-      margin: 1.2rem 0;
-    }
-    .arsenal-item {
-      background: rgba(139, 92, 246, 0.12);
-      padding: 10px 14px;
-      border-radius: 1rem;
-      font-size: 0.9rem;
-      border: 1px solid rgba(255,255,255,0.05);
-      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-bottom: 1rem;
     }
-    .philosophy-quote {
-      font-style: italic;
-      color: #F472B6;
-      border-left: 3px solid #F472B6;
-      padding-left: 1rem;
-      margin-top: 1.2rem;
+    .about-text {
+      font-size: 1rem;
+      color: #ddd6fe;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .arsenal-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .arsenal-item {
+      background: rgba(139, 92, 246, 0.15);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
       font-weight: 500;
-      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+    /* section headings */
     .section-head {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       font-weight: 700;
       margin: 2rem 0 1.5rem;
       background: linear-gradient(120deg, #E9E3FF, #C4B5FD);
@@ -139,68 +127,87 @@
       background-clip: text;
       color: transparent;
     }
-    .core-grid, .qa-grid {
-      display: grid;
-      gap: 1.8rem;
-    }
+    /* core cards grid */
     .core-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 1rem;
     }
-    .qa-grid {
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      margin-bottom: 2rem;
-    }
+    /* shared glass card style */
     .glass-card {
-      background: rgba(18, 14, 38, 0.65);
-      backdrop-filter: blur(15px);
-      border-radius: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      transition: all 0.35s ease;
+      background: rgba(18, 14, 40, 0.7);
+      backdrop-filter: blur(16px);
+      border-radius: 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       overflow: hidden;
     }
     .glass-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-6px);
+      border-color: rgba(167, 139, 250, 0.6);
+      box-shadow: 0 20px 32px -12px rgba(0,0,0,0.5);
     }
     .card-icon {
-      height: 160px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(79, 70, 229, 0.4), rgba(236, 72, 153, 0.3));
-      font-size: 4rem;
-      color: #FFFAF0;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(236, 72, 153, 0.25));
+      font-size: 3.5rem;
+      color: #f0eaff;
     }
     .card-content {
-      padding: 1.4rem 1.2rem 1.6rem;
+      padding: 1.2rem 1.2rem 1.4rem;
     }
     .card-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      background: linear-gradient(125deg, #FFF, #E0D0FF);
+      background: linear-gradient(125deg, #FFF, #D9C8FF);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .card-badge {
-      font-size: 0.8rem;
-      color: #B8ABE0;
-      border-top: 1px dashed rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+      color: #b7a9e6;
+      border-top: 1px dashed rgba(255,255,255,0.15);
       padding-top: 0.6rem;
       margin-top: 0.5rem;
     }
+    /* Daily Q&A grid */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .qa-card {
+      background: rgba(18, 14, 40, 0.7);
+      backdrop-filter: blur(16px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: 0.25s;
+      overflow: hidden;
+    }
+    .qa-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139,92,246,0.5);
+    }
     .qa-img {
       height: 150px;
-      background: #0b0822;
+      background: #0a0820;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      position: relative;
     }
     .qa-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      pointer-events: none; /* prevent drag */
     }
     .img-placeholder {
       width: 100%;
@@ -209,74 +216,67 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #2a1f4e, #1a1035);
-      color: #c0b0ff;
+      background: linear-gradient(135deg, #211c44, #110e2a);
+      color: #bbaaff;
       gap: 8px;
     }
     .qa-body {
       padding: 1rem 1.2rem 1.2rem;
     }
     .qa-question {
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #F0E6FF;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #f0e6ff;
       margin-bottom: 0.5rem;
+      display: flex;
+      gap: 8px;
     }
     .qa-answer {
-      font-size: 0.9rem;
-      color: #CBBDFF;
-      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #c4b5fd;
+      line-height: 1.4;
     }
-    .copy-btn {
-      background: rgba(139, 92, 246, 0.3);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-    }
-    .copy-btn:hover {
-      background: #8B5CF6;
-    }
+    /* Day selector */
     .day-control {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.5rem;
-      background: rgba(0,0,0,0.3);
+      margin-bottom: 1.8rem;
+      background: rgba(0,0,0,0.35);
       padding: 0.8rem 1.2rem;
       border-radius: 60px;
+      backdrop-filter: blur(4px);
     }
     #daySelect {
       background: #1e1a3a;
       border: 1px solid #a78bfa;
       color: white;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 40px;
-      font-weight: bold;
+      font-weight: 600;
+      cursor: pointer;
     }
+    /* skills & contact */
     .skills-elite {
       margin: 2rem 0;
-      padding: 1.8rem;
-      background: rgba(10, 7, 28, 0.55);
-      border-radius: 2rem;
+      padding: 1.5rem;
+      background: rgba(10, 7, 28, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 1.8rem;
     }
     .skills-badge-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.8rem;
       list-style: none;
+      margin-top: 0.8rem;
     }
     .skill-badge {
       background: linear-gradient(105deg, rgba(139, 92, 246, 0.2), rgba(244, 114, 182, 0.15));
-      padding: 0.65rem 1.5rem;
-      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
       font-weight: 600;
     }
     .btn-founder {
@@ -285,13 +285,17 @@
       gap: 12px;
       background: linear-gradient(95deg, #7C3AED, #DB2777, #F43F5E);
       background-size: 180% auto;
-      padding: 1rem 2.4rem;
+      padding: 0.9rem 2rem;
       border-radius: 60px;
       font-weight: 700;
+      font-size: 1rem;
       color: white;
       text-decoration: none;
       transition: 0.3s;
-      margin: 0 auto;
+    }
+    .btn-founder:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(192, 132, 252, 0.7);
     }
     .contact-founder-area {
       text-align: center;
@@ -300,91 +304,65 @@
     .footer-signature {
       text-align: center;
       margin-top: 2rem;
-      padding-top: 1.5rem;
+      padding-top: 1.2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+      color: #b6a9e0;
     }
-    .toast-msg {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1e1a3a;
-      backdrop-filter: blur(12px);
-      padding: 8px 20px;
-      border-radius: 40px;
-      opacity: 0;
-      transition: 0.2s;
-      pointer-events: none;
-      z-index: 999;
-    }
+    /* responsive */
     @media (max-width: 640px) {
-      .core-grid, .qa-grid { grid-template-columns: 1fr; }
       .container { padding: 1rem; }
-      .about-header { font-size: 1.4rem; }
+      .core-grid, .qa-grid { grid-template-columns: 1fr; }
+      .about-header { font-size: 1.3rem; }
+    }
+    /* prevent right-click on images */
+    img {
+      pointer-events: none;
+      user-drag: none;
+      user-select: none;
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <!-- Hero Section -->
   <div class="glow-name">ARSH PATEL</div>
   <div class="hero-title">Founder & Leader of Mastermind Hackers India (MHI)</div>
 
-  <!-- === ABOUT THE FOUNDER (Premium Section - Upar) === -->
+  <!-- About Founder - clean & professional (no poetry) -->
   <div class="about-founder">
-    <div class="about-header">
-      <i class="fas fa-crown"></i> 👑 ABOUT THE FOUNDER
+    <div class="about-header"><i class="fas fa-crown"></i> About the Founder</div>
+    <div class="about-text">
+      <strong>Arsh Patel</strong> – Technical Architect & founder of <strong>Mastermind Hackers India (MHI)</strong>.  
+      At 17, he architects high-performance Python bots, secure web ecosystems, and leads a team dedicated to next‑gen tech innovation.
     </div>
-    <div class="about-sub">The Visionary Behind Mastermind Hackers India (MHI)</div>
-    <p class="about-text">
-      <strong>Arsh Patel</strong> is a high-caliber <strong>Technical Architect</strong> and the driving force behind <strong>MHI</strong>. At just 17, he specializes in building high-performance Python bots and engineering secure, premium web ecosystems. He believes that real-world innovation and hands-on execution are the only true benchmarks of a developer.
-    </p>
-    <div style="font-weight: 700; color: #FFF; margin-bottom: 10px;">🛡️ CORE ARSENAL & EXPERTISE</div>
     <div class="arsenal-grid">
-      <div class="arsenal-item"><i class="fab fa-python"></i> Python Bot Engineering</div>
-      <div class="arsenal-item"><i class="fas fa-globe"></i> Web Architecture</div>
-      <div class="arsenal-item"><i class="fas fa-user-secret"></i> OSINT & Recon</div>
-      <div class="arsenal-item"><i class="fas fa-chart-line"></i> Strategic Leadership</div>
-    </div>
-    <p class="about-text">
-      🎯 <strong>The Mission:</strong> Under Arsh’s command, MHI is bridging the gap between traditional learning and next-gen technology, empowering a new wave of Indian developers.
-    </p>
-    <div class="philosophy-quote">
-      <i class="fas fa-quote-left"></i> "Logic is my language, and the terminal is my playground. I don't just solve problems; I architect solutions that scale."
+      <span class="arsenal-item"><i class="fab fa-python"></i> Python Bot Engineering</span>
+      <span class="arsenal-item"><i class="fas fa-globe"></i> Web Architecture</span>
+      <span class="arsenal-item"><i class="fas fa-user-secret"></i> OSINT & Recon</span>
+      <span class="arsenal-item"><i class="fas fa-chart-line"></i> Strategic Leadership</span>
     </div>
   </div>
 
-  <!-- Permanent 4 Core Cards -->
-  <div class="section-head"><i class="fas fa-microchip"></i><span>TECHNICAL VAULT — Core Arsenal</span></div>
+  <!-- 4 Core Cards -->
+  <div class="section-head"><i class="fas fa-microchip"></i><span>Technical Vault – Core Arsenal</span></div>
   <div class="core-grid">
-    <div class="glass-card"><div class="card-icon"><i class="fab fa-python"></i></div><div class="card-content"><div class="card-title">Python Bot Engineering</div><div class="card-badge"><i class="fas fa-award"></i> 1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><div class="card-content"><div class="card-title">Professional Web Design</div><div class="card-badge"><i class="fas fa-award"></i> 1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-user-shield"></i></div><div class="card-content"><div class="card-title">Cybersecurity & Ethical Hacking</div><div class="card-badge"><i class="fas fa-award"></i> 1st Advanced Coding Architecture</div></div></div>
-    <div class="glass-card"><div class="card-icon"><i class="fas fa-microchip"></i></div><div class="card-content"><div class="card-title">Advanced Coding</div><div class="card-badge"><i class="fas fa-award"></i> 1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fab fa-python"></i></div><div class="card-content"><div class="card-title">Python Bot Engineering</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><div class="card-content"><div class="card-title">Professional Web Design</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-user-shield"></i></div><div class="card-content"><div class="card-title">Cybersecurity & Ethical Hacking</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
+    <div class="glass-card"><div class="card-icon"><i class="fas fa-microchip"></i></div><div class="card-content"><div class="card-title">Advanced Coding</div><div class="card-badge">1st Advanced Coding Architecture</div></div></div>
   </div>
 
-  <!-- Daily Q&A Section - Hardcoded Data (Edit allQA object below) -->
-  <div class="section-head"><i class="fas fa-calendar-day"></i><span>📅 DAILY 10 Q&A — AI Visual Notes</span></div>
+  <!-- Daily Q&A Section (Dynamic Days) -->
+  <div class="section-head"><i class="fas fa-calendar-day"></i><span>Daily 15 Q&A – AI Visual Notes</span></div>
   <div class="day-control">
     <label><i class="fas fa-calendar-alt"></i> Select Day:</label>
-    <select id="daySelect">
-      <option value="1">Day 1</option>
-      <option value="2">Day 2</option>
-      <option value="3">Day 3</option>
-      <option value="4">Day 4</option>
-      <option value="5">Day 5</option>
-      <option value="6">Day 6</option>
-      <option value="7">Day 7</option>
-      <option value="8">Day 8</option>
-      <option value="9">Day 9</option>
-      <option value="10">Day 10</option>
-    </select>
+    <select id="daySelect"></select>
   </div>
   <div id="dailyQaGrid" class="qa-grid">Loading...</div>
 
   <!-- Skills & Contact -->
   <div class="skills-elite">
-    <div style="display:flex; gap:12px; align-items:center; margin-bottom:1rem;"><i class="fas fa-crown"></i><span style="font-weight:700;">CORE EXPERTISE & ARMORY</span></div>
+    <div style="display:flex; gap:12px; align-items:center;"><i class="fas fa-crown"></i><span style="font-weight:700;">Core Expertise & Armory</span></div>
     <ul class="skills-badge-list">
       <li class="skill-badge"><i class="fab fa-python"></i> Python Bot Development</li>
       <li class="skill-badge"><i class="fas fa-shield-virus"></i> Cybersecurity & Ethical Hacking</li>
@@ -397,147 +375,139 @@
   </div>
   <div class="footer-signature">
     <div>Admin: <strong>Arsh Patel</strong> | © 2026</div>
-    <div style="margin-top:8px;"><i class="fas fa-phone-alt"></i> +91 94539 45377</div>
+    <div><i class="fas fa-phone-alt"></i> +91 94539 45377</div>
   </div>
 </div>
-<div id="toast" class="toast-msg">✅ Copied!</div>
 
 <script>
-  // ============================================================
-  // 🔥 EDIT YOUR DAILY QUESTIONS & ANSWERS HERE 🔥
-  // Format: { q: "Question", a: "Answer" }
-  // Add more days like 3: [ ... ], 4: [ ... ]
-  // ============================================================
+  // ==========================================================
+  // 🔥 EDIT YOUR QUESTIONS & ANSWERS HERE 🔥
+  // Format: dayNumber: [ { q: "Question", a: "Answer" }, ... ]
+  // Each day must have 15 items (1 to 15). Add as many days as you want.
+  // ==========================================================
   const allQA = {
     1: [
-      { q: "Computer ya Laptop mein naya folder kaise banate hain?", a: "Tarika 1: Mouse Se
-​Desktop par Right Click karein.
-​New > Folder par click karein.
-​Tarika 2: Keyboard Shortcut
-​Ek saath dabayein: Ctrl + Shift + N." },
-      { q: "Folder Kholna aur File Save Karna?", a: "1. Folder Kaise Kholein? (Open Folder)
-​Mouse se: Folder par Double Click karein ya Right Click > Open karein.
-​Shortcut: Ctrl + O
-​2. File Kaise Save Karein? (Save File)
-​Mouse se: File menu mein jaakar Save As par click karein.
-​Shortcut: Ctrl + S." },
-      { q: "Folder Ka Naam Kaise Badlein? (Rename)?", a: "​Mouse se: Folder par Right Click karein aur 'Rename' chunein.
-​Shortcut Key: Folder select karke keyboard par F2 dabayein.
-​Process: Naya naam likhein aur Enter daba dein." },
-      { q: "Folder Kaise Delete Karein?", a: "Tarika 1: Mouse Se (Normal Delete)
-​Folder par Right Click karein aur Delete chunein.
-​Note: File Recycle Bin mein jayegi (wapas aa sakti hai).
-​Tarika 2: Keyboard Shortcut (Permanent Delete)
-​Ek saath dabayein: Shift + Delete
-​Note: File hamesha ke liye delete ho jayegi (Recycle Bin mein nahi jayegi)." },
-      { q: "..?", a: "High-level programming language." },
-      { q: "What is Ethical Hacking?", a: "Authorized hacking for security." },
-      { q: "What is HTML?", a: "HyperText Markup Language for web." },
-      { q: "What is a Firewall?", a: "Network security system." },
-      { q: "What is Cybersecurity?", a: "Protection from digital attacks." },
-      { q: "What is a Bot?", a: "Automated software program." }
-    ],
-    2: [
-      { q: "What is an Algorithm?", a: "Step-by-step procedure to solve a problem." },
-      { q: "What is a Variable?", a: "Storage location with a name." },
-      { q: "What is a Loop?", a: "Repeats code multiple times." },
-      { q: "What is a Function?", a: "Reusable block of code." },
-      { q: "What is an Array?", a: "Collection of elements." },
-      { q: "What is DNS?", a: "Domain Name System — converts domain to IP." },
-      { q: "What is HTTP?", a: "Protocol for web communication." },
-      { q: "What is SQL?", a: "Language for databases." },
-      { q: "What is a Virus?", a: "Malicious software that replicates." },
-      { q: "What is Phishing?", a: "Fake attempt to steal data." }
+      { q: "Naya Folder Kaise Banayein?", a: "Right Click > New > Folder ya Ctrl+Shift+N." },
+      { q: "Folder Kaise Kholen aur File Save Karein?", a: "Right Click > Open ya Ctrl+O. Save: Ctrl+S." },
+      { q: "Folder Ka Naam Kaise Badlein? (Rename)", a: "Right Click > Rename, naya naam likhkar Enter." },
+      { q: "Folder Kaise Delete Karein?", a: "Right Click > Delete (Recycle bin). Shift+Delete (permanent)." },
+      { q: "Recycle Bin Ka Prayog Karna?", a: "Restore: Right Click > Restore. Empty: Right Click > Empty Recycle Bin." },
+      { q: "File/Folder ko Move karna?", a: "Drag & drop ya Ctrl+X (Cut) aur Ctrl+V (Paste)." },
+      { q: "Ek Saath Kai File/Folder ko Move Karna?", a: "Select all (Ctrl+A) ya mouse se select, phir Cut-Paste." },
+      { q: "Mouse ke Right Button ka Prayog?", a: "Context Menu (options) khulta hai. Drag me 'Move here' ya 'Copy here'." },
+      { q: "Mouse mein Scroll Wheel ka Prayog?", a: "Scroll: page up/down. Ctrl+Scroll: zoom. Middle click: naye tab mein link." },
+      { q: "Desktop ke Control Button ka Prayog?", a: "Volume, Wi-Fi, Brightness change. Ctrl+Alt+Delete for Task Manager." },
+      { q: "Double Click se kya taatparya hai?", a: "Folder/File kholna, program start karna, word select karna." },
+      { q: "Right Click se kya taatparya hai?", a: "Extra options (Copy, Paste, Rename, Properties) ke liye." },
+      { q: "Computer mein Start Menu ka Prayog?", a: "Apps search, pinned programs, Power Options (Shut Down/Restart)." },
+      { q: "Computer mein Taskbar Patti ka Prayog?", a: "Start button, pinned apps, Wi-Fi, volume, clock (time)." },
+      { q: "Run Command se kisi program ko open karna?", a: "Win+R, type program name (e.g., notepad), Enter." }
     ]
-    // Add more days below, e.g.:
-    // 3: [ { q: "Q1", a: "A1" }, ... ]
+    // 🔽 Add Day 2 like below (exactly 15 items):
+    // 2: [
+    //   { q: "Question 1", a: "Answer 1" },
+    //   ... up to 15
+    // ],
+    // 3: [ ... ],
   };
 
+  // --- helper to ensure each day has exactly 15 items (fill missing with placeholders)
+  const DEFAULT_QA = [];
+  for (let i = 1; i <= 15; i++) DEFAULT_QA.push({ q: `Question ${i}`, a: `Answer ${i}` });
+
   function getQAForDay(day) {
-    const defaultQA = [];
-    for(let i=1; i<=10; i++) defaultQA.push({ q: `Question ${i}`, a: `Answer ${i}` });
-    if(allQA[day]) {
-      const userQA = allQA[day];
-      const filled = [];
-      for(let i=0; i<10; i++) {
-        if(i < userQA.length) filled.push(userQA[i]);
-        else filled.push(defaultQA[i]);
-      }
-      return filled;
+    const userQA = allQA[day];
+    if (!userQA) return DEFAULT_QA.slice();
+    const filled = [];
+    for (let i = 0; i < 15; i++) {
+      if (i < userQA.length) filled.push(userQA[i]);
+      else filled.push(DEFAULT_QA[i]);
     }
-    return defaultQA;
+    return filled;
   }
 
-  function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-      if(m==='&') return '&amp;';
-      if(m==='<') return '&lt;';
-      if(m==='>') return '&gt;';
-      return m;
+  // --- populate day selector dynamically from allQA keys + allow up to day 30? We'll just use existing keys.
+  function populateDaySelector() {
+    const select = document.getElementById('daySelect');
+    select.innerHTML = '';
+    const days = Object.keys(allQA).map(Number).sort((a,b) => a-b);
+    if (days.length === 0) days.push(1);
+    days.forEach(day => {
+      const option = document.createElement('option');
+      option.value = day;
+      option.textContent = `Day ${day} (15 Qs)`;
+      select.appendChild(option);
     });
   }
 
-  function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      let toast = document.getElementById('toast');
-      toast.style.opacity = '1';
-      setTimeout(() => toast.style.opacity = '0', 1500);
-    });
-  }
-
+  // --- render cards for selected day (no copy button)
   function renderDailyCards(day) {
     const grid = document.getElementById('dailyQaGrid');
     grid.innerHTML = '';
     const qaList = getQAForDay(day);
-    for(let idx=0; idx<qaList.length; idx++) {
-      const item = qaList[idx];
-      const qNum = idx+1;
+    for (let i = 0; i < qaList.length; i++) {
+      const item = qaList[i];
+      const qNum = i + 1;
       const imageUrl = `day${day}_${qNum}.png`;
       const card = document.createElement('div');
       card.className = 'qa-card';
-      
+
       const imgDiv = document.createElement('div');
       imgDiv.className = 'qa-img';
       const img = new Image();
       img.src = imageUrl;
+      img.alt = `Q${qNum}`;
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.objectFit = 'cover';
       img.onerror = () => {
-        if(imgDiv.querySelector('.img-placeholder')) return;
+        if (imgDiv.querySelector('.img-placeholder')) return;
         const ph = document.createElement('div');
         ph.className = 'img-placeholder';
-        ph.innerHTML = `<i class="fas fa-image" style="font-size:2.5rem;"></i><span>AI image coming soon</span><span style="font-size:0.7rem;">${imageUrl}</span>`;
+        ph.innerHTML = `<i class="fas fa-image"></i><span>AI image soon</span><small>${imageUrl}</small>`;
         imgDiv.innerHTML = '';
         imgDiv.appendChild(ph);
       };
       imgDiv.appendChild(img);
-      
+
       const bodyDiv = document.createElement('div');
       bodyDiv.className = 'qa-body';
       bodyDiv.innerHTML = `
         <div class="qa-question"><i class="fas fa-question-circle"></i> ${escapeHtml(item.q)}</div>
         <div class="qa-answer"><i class="fas fa-lightbulb"></i> ${escapeHtml(item.a)}</div>
-        <button class="copy-btn" data-q="${escapeHtml(item.q)}" data-a="${escapeHtml(item.a)}"><i class="fas fa-copy"></i> Copy Q&A</button>
       `;
       card.appendChild(imgDiv);
       card.appendChild(bodyDiv);
       grid.appendChild(card);
     }
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        copyToClipboard(`📌 Question: ${btn.getAttribute('data-q')}\n📝 Answer: ${btn.getAttribute('data-a')}`);
-      });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
     });
   }
 
-  let currentDay = 1;
+  // disable right-click on all images (additional protection)
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // init
+  populateDaySelector();
   const daySelect = document.getElementById('daySelect');
+  let currentDay = parseInt(daySelect.value);
+  renderDailyCards(currentDay);
   daySelect.addEventListener('change', (e) => {
     currentDay = parseInt(e.target.value);
     renderDailyCards(currentDay);
   });
-  renderDailyCards(1);
 </script>
 </body>
 </html>
